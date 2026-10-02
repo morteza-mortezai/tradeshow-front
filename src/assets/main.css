@@ -385,6 +385,12 @@ nav a.router-link-active {
   font-variant-numeric: tabular-nums;
   font-weight: 700;
 }
+.amount-positive {
+  color: #15803d;
+}
+.amount-negative {
+  color: #dc2626;
+}
 .compact-panel {
   align-items: end;
   display: flex;

@@ -126,7 +126,15 @@ onMounted(() => {
             <tr v-for="owe in owes" :key="owe.id">
               <td><strong>{{ owe.fromUser.fullName }}</strong></td>
               <td>{{ owe.toUser.fullName }}</td>
-              <td class="amount-cell amount">{{ formatAmount(owe.balance) }}</td>
+              <td
+                class="amount-cell amount"
+                :class="{
+                  'amount-positive': owe.balance > 0,
+                  'amount-negative': owe.balance < 0,
+                }"
+              >
+                {{ formatAmount(owe.balance) }}
+              </td>
               <td>{{ formatDate(owe.createdAt) }}</td>
             </tr>
           </tbody>
